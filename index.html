@@ -118,6 +118,11 @@ fetch("./arctic.gexf")
     // Set proper range initial value:
     labelsThresholdRange.value = renderer.getSetting("labelRenderedSizeThreshold") + "";
 });
+
+// Load the graph in sigma
+renderer.graph.read(graph);
+// Ask sigma to draw it
+renderer.refresh();
     </script>
   </body>
 </html>
