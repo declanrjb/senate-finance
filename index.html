@@ -72,55 +72,40 @@
       </div>
     </div>
     <script>
-import Sigma from "sigma";
-import Graph from "graphology";
-import { parse } from "graphology-gexf/browser";
+// Initialise sigma:
+var s = new sigma(
+  {
+    renderer: {
+      container: document.getElementById('sigma-container'),
+      type: 'canvas'
+    },
+    settings: {
+     minEdgeSize: 0.1,
+     maxEdgeSize: 2,
+     minNodeSize: 1,
+     maxNodeSize: 8,
+    }
+  }
+);
 
-// Load external GEXF file:
-fetch("./arctic.gexf")
-  .then((res) => res.text())
-  .then((gexf) => {
-    // Parse GEXF string:
-    const graph = parse(Graph, gexf);
+// Create a graph object
+var graph = {
+  nodes: [
+    { id: "n0", label: "A node", x: 0, y: 0, size: 3, color: '#008cc2' },
+    { id: "n1", label: "Another node", x: 3, y: 1, size: 2, color: '#008cc2' },
+    { id: "n2", label: "And a last one", x: 1, y: 3, size: 1, color: '#E57821' }
+  ],
+  edges: [
+    { id: "e0", source: "n0", target: "n1", color: '#282c34', type:'line', size:0.5 },
+    { id: "e1", source: "n1", target: "n2", color: '#282c34', type:'curve', size:1},
+    { id: "e2", source: "n2", target: "n0", color: '#FF0000', type:'line', size:2}
+  ]
+}
 
-    // Retrieve some useful DOM elements:
-    const container = document.getElementById("sigma-container") as HTMLElement;
-    const zoomInBtn = document.getElementById("zoom-in") as HTMLButtonElement;
-    const zoomOutBtn = document.getElementById("zoom-out") as HTMLButtonElement;
-    const zoomResetBtn = document.getElementById("zoom-reset") as HTMLButtonElement;
-    const labelsThresholdRange = document.getElementById("labels-threshold") as HTMLInputElement;
-
-    // Instanciate sigma:
-    const renderer = new Sigma(graph, container, {
-      minCameraRatio: 0.1,
-      maxCameraRatio: 10,
-    });
-    const camera = renderer.getCamera();
-
-    // Bind zoom manipulation buttons
-    zoomInBtn.addEventListener("click", () => {
-      camera.animatedZoom({ duration: 600 });
-    });
-    zoomOutBtn.addEventListener("click", () => {
-      camera.animatedUnzoom({ duration: 600 });
-    });
-    zoomResetBtn.addEventListener("click", () => {
-      camera.animatedReset({ duration: 600 });
-    });
-
-    // Bind labels threshold to range input
-    labelsThresholdRange.addEventListener("input", () => {
-      renderer.setSetting("labelRenderedSizeThreshold", +labelsThresholdRange.value);
-    });
-
-    // Set proper range initial value:
-    labelsThresholdRange.value = renderer.getSetting("labelRenderedSizeThreshold") + "";
-  });
-
-  // Load the graph in sigma
-renderer.graph.read(graph);
+// Load the graph in sigma
+s.graph.read(graph);
 // Ask sigma to draw it
-renderer.refresh();
+s.refresh();
     </script>
   </body>
 </html>
