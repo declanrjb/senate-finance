@@ -110,7 +110,10 @@ fetch("./fullSenate23.gexf")
         // autocomplete:
         if (suggestions.length === 1 && suggestions[0].label === query) {
           state.selectedNode = suggestions[0].id;
+          setHoveredNode(suggestions[0].id)
           state.suggestions = undefined;
+          clickMode = true
+          clickedNode = suggestions[0].id
 
           // Move the camera to center it on the selected node:
           const nodePosition = renderer.getNodeDisplayData(
@@ -204,6 +207,12 @@ fetch("./fullSenate23.gexf")
       } else if (state.suggestions && !state.suggestions.has(node)) {
         res.label = "";
         res.color = "#f6f6f6";
+      }
+
+      if (state.suggestions && state.suggestions.has(node)) {
+        res.highlighted = true;
+        res.label = graph.getNodeAttribute(node, "label")
+        res.color = graph.getNodeAttribute(node, "color")
       }
 
       return res;
