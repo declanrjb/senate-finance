@@ -11,7 +11,7 @@ import { parse } from "graphology-gexf/browser";
 import { Coordinates, EdgeDisplayData, NodeDisplayData } from "sigma/types";
 
 // Load external GEXF file:
-fetch("./fullSenate32.gexf")
+fetch("./fruchHighGrav.gexf")
   .then((res) => res.text())
   .then((gexf) => {
     // Parse GEXF string:
