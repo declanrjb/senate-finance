@@ -10,6 +10,8 @@ Click any node to focus its local network, and click again to dismiss. Double cl
 
 This web application was developed by Declan Bradley using react and sigmajs, and incorporates sample code from both libraries. Thank you to the developers of us-senate and other GitHub repositories at Civil Service USA for providing data that makes this analysis possible.
 
+The final project is available at https://declanrjb.github.io/senate-finance/.
+
 ## Methodology
 
 The source data for this chart was crawled from opensecrets.org using R. The script focused on senators as initial data points and charted the donors listed in the "Top Contributors" table of each representative's Open Secrets page, returning only donations over $1000 and only the top 100 donors by amount for each senator. Each senator's Open Secrets id, used in the url query, was taken from an open GitHub repository of senate data available at https://github.com/CivilServiceUSA/us-senate/blob/master/us-senate/data/us-senate.csv. My thanks to the creators of that project for making this work possible.
@@ -37,6 +39,4 @@ The following aesthetic attributes were added after the layout process:
 | Edge Weight  | Log base 2 of the amount the edge represents, in $                                |
 | Edge Opacity | As a proportion of edge weight, with the same calculation as above                |
 
-The finished chart was loaded into the project as a gexf file and rendered using sigmajs (see code above).
-
-The final project is available at https://declanrjb.github.io/senate-finance/.
+The finished chart was loaded into the project as a gexf file and rendered using sigmajs.
