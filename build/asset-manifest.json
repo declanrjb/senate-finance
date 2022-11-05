@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/senate-finance/static/js/main.efacacf1.chunk.js",
-    "main.js.map": "/senate-finance/static/js/main.efacacf1.chunk.js.map",
+    "main.js": "/senate-finance/static/js/main.a5ce4bc9.chunk.js",
+    "main.js.map": "/senate-finance/static/js/main.a5ce4bc9.chunk.js.map",
     "runtime-main.js": "/senate-finance/static/js/runtime-main.f0a602c7.js",
     "runtime-main.js.map": "/senate-finance/static/js/runtime-main.f0a602c7.js.map",
     "static/js/2.da7d10c1.chunk.js": "/senate-finance/static/js/2.da7d10c1.chunk.js",
@@ -11,6 +11,6 @@
   "entrypoints": [
     "static/js/runtime-main.f0a602c7.js",
     "static/js/2.da7d10c1.chunk.js",
-    "static/js/main.efacacf1.chunk.js"
+    "static/js/main.a5ce4bc9.chunk.js"
   ]
 }

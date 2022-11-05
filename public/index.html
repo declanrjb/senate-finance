@@ -73,7 +73,7 @@
         box-shadow: 0 1px 5px #666;
         padding: 1em;
         padding-bottom: .5em;
-        width: 16em;
+        width: 18em;
         z-index: 1000;
         background-color: #fff;
         color: #000000;
@@ -125,7 +125,12 @@
       }
       #social-panel {
         position: absolute;
-        right: 1em;
+        right: 0em;
+        top: 8em;
+        box-shadow: 0 1px 5px #666;
+        padding: .5em;
+        border-radius: 25px;
+        background: #ffffff;
       }
       .twitter-share-button {
         vertical-align: middle;
@@ -197,20 +202,23 @@
           <input id="labels-threshold" type="range" min="0" max="15" step="0.5" />
         </div>
       </div>
+      <div id="social-panel">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdeclanrjb.github.io%2Ffinance-final%2F&amp;src=sdkpreparse" class="fa fa-facebook"></a>
+        <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdeclanrjb.github.io%2Ffinance-final%2F&title=US%20Senate%20Major%20Campaign%20Donations" class="fa fa-reddit"></a>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
     </div>
     <div class="panel">
       <div id="panel-header">
         <h2>
           &#9432; About
         </h2>
-        <div id="social-panel">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdeclanrjb.github.io%2Ffinance-final%2F&amp;src=sdkpreparse" class="fa fa-facebook"></a>
-          <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fdeclanrjb.github.io%2Ffinance-final%2F&title=US%20Senate%20Major%20Campaign%20Donations" class="fa fa-reddit"></a>
-          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
       </div>
         <p>
-          This chart represents campaign donations of $1000 or more to representatives in the US Senate. The source data was crawled from <a href="https://opensecrets.org">opensecrets.org</a>, an independent nonprofit whose mission is to "track the flow of money in American politics and provide the data and analysis to strengthen democracy."
+          This chart represents campaign donations of $1000 or more to representatives in the US Senate. 
+        </p>
+        <p>
+          The source data was crawled from <a href="https://opensecrets.org">opensecrets.org</a>, an independent nonprofit whose mission is to "track the flow of money in American politics and provide the data and analysis to strengthen democracy."
         </p>
         <p>
           Senators are responsible for reporting this data, and those who chose not to are not represented here. In addition, the most recent publicly available report was used in each case, so some data may be out of date.
