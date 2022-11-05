@@ -16,6 +16,7 @@ The source data for this chart was crawled from opensecrets.org using R. The scr
 
 After cleaning for duplicates and near duplicates (ie, variant spellings and capitalizations), this yielded a total of 3750 nodes and 7049 edges. Five senators have not made recent reports public, and/or did not have Open Secrets ids listed in the above database, and are therefore not included. The remaining nodes and edges were imported into Gephi and arranged using the Fruchterman Reingold method with the following settings:
 
+| Area      | 20000.0 |
 |-----------|---------|
 | Area      | 20000.0 |
 | Gravity   | 5.0     |
