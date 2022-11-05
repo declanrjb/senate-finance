@@ -20,11 +20,11 @@ After cleaning for duplicates and near duplicates (ie, variant spellings and cap
 
 | Property  | Value   |
 |-----------|---------|
-| Area      | 20000.0 |
-| Gravity   | 5.0     |
-| Speed     | 10.0    |
+| Area      | 37500.0 |
+| Gravity   | 2.0     |
+| Speed     | 5.0     |
 
-At the time of layout, Gephi factored existing connections and node size into final positions, but had no access to party alignment or other political information. Any appearance of a party arrangement in the final graph is purely a result of the efficiency calculations built into the Fruchterman Reingold process. The following variables were used at the time of layout:
+At the time of layout, Gephi factored existing connections and node size into final positions, but had no access to party association or other political information. Any appearance of a party arrangement in the final graph is purely a result of the efficiency calculations built into the Fruchterman Reingold process. The following variables were used at the time of layout:
 
 | Property    | Value                                              |
 |-------------|----------------------------------------------------|
@@ -38,5 +38,6 @@ The following aesthetic attributes were added after the layout process:
 | Color        | By party alignment: blue for Democrat, red for Republican, yellow for Independent |
 | Edge Weight  | Log base 2 of the amount the edge represents, in $                                |
 | Edge Opacity | As a proportion of edge weight, with the same calculation as above                |
+| Rotation     | By a random seed, the layout algorithm placed Republicans on the left of the graph and Democrats on the right. The graph was rotated 180 degrees to make this less confusing. |
 
 The finished chart was loaded into the project as a gexf file and rendered using sigmajs.
