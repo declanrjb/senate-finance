@@ -16,7 +16,7 @@ The source data for this chart was crawled from opensecrets.org using R. The scr
 
 After cleaning for duplicates and near duplicates (ie, variant spellings and capitalizations), this yielded a total of 3750 nodes and 7049 edges. Five senators have not made recent reports public, and/or did not have Open Secrets ids listed in the above database, and are therefore not included. The remaining nodes and edges were imported into Gephi and arranged using the Fruchterman Reingold method with the following settings:
 
-| Area      | 20000.0 |
+| Property  | Value   |
 |-----------|---------|
 | Area      | 20000.0 |
 | Gravity   | 5.0     |
@@ -24,12 +24,14 @@ After cleaning for duplicates and near duplicates (ie, variant spellings and cap
 
 At the time of layout, Gephi factored existing connections and node size into final positions, but had no access to party alignment or other political information. Any appearance of a party arrangement in the final graph is purely a result of the efficiency calculations built into the Fruchterman Reingold process. The following variables were used at the time of layout:
 
+| Property    | Value                                              |
 |-------------|----------------------------------------------------|
 | Node size   | Tenth root of amount total in $, given or received |
 | Connections | Calculated from the above data set                 |
 
 The following aesthetic attributes were added after the layout process:
 
+| Property     | Value                                                                             |
 |--------------|-----------------------------------------------------------------------------------|
 | Color        | By party alignment: blue for Democrat, red for Republican, yellow for Independent |
 | Edge Weight  | Log base 2 of the amount the edge represents, in $                                |
