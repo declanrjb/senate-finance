@@ -54,18 +54,6 @@ fetch("./fruchHighGrav4.gexf")
       camera.animatedReset({ duration: 600 });
     });
 
-    // Bind labels threshold to range input
-    labelsThresholdRange.addEventListener("input", () => {
-      renderer.setSetting(
-        "labelRenderedSizeThreshold",
-        +labelsThresholdRange.value
-      );
-    });
-
-    // Set proper range initial value:
-    labelsThresholdRange.value =
-      renderer.getSetting("labelRenderedSizeThreshold") + "";
-
     // Type and declare internal state:
     interface State {
       hoveredNode?: string;
